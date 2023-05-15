@@ -1,9 +1,8 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 .header{
     position: sticky;
     display: flex;
@@ -34,6 +33,10 @@
     padding: 0px 20px;
     text-transform: capitalize;
     border-right: 1px solid black;
+}
+
+#blogs-border{
+    border-right: none;
 }
 
 .nav {
@@ -122,36 +125,89 @@ a {
     gap: 15px;
     align-items: center;
 }
-.carousel-container {
-	width: 100%;
-    height: 85.1vh;
-	overflow: hidden;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
-  
-.carousel {
-	height: calc(100vh * 3);
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	transform: translateY(-100vh);
-	transition: transform 0.5s ease;
+
+button{
+    margin: 10px 0px;
+    height: 50px;
+    width: 100px;
 }
-  
-.slide {
-	height: 100vh;
-	width: 100%;
-	background-size: cover;
-	background-position: center;
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    padding: 20px;
 }
-@media (max-width: 768px) { 
-    .navbar{
-        padding: 10px 8%;
+
+main ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 20px;
+    list-style: none;
+}
+main li {
+    border: 1px solid #ccc;
+    padding:0px 30px;
+}
+
+main li:hover {
+    border-color: #333;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+main h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+main p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        display: flex;
+        justify-content: center;
     }
-    .nav {
-        padding: 15px 8%;
+    
+    footer p {
+        margin: 0 20px;
     }
-    .nav .search-box {
-        right: 8%;
+}
+@media screen and (min-width: 768px) {
+    main ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: auto;
     }
 }
